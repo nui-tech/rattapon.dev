@@ -1,16 +1,16 @@
 "use client";
 
 import { useState } from "react";
-import { Turnstile } from "@marsidev/react-turnstile";
+import HCaptcha from "@hcaptcha/react-hcaptcha";
 
 export default function Contact() {
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [form, setForm] = useState({ name: "", email: "", message: "" });
-  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const [captchaToken, setCaptchaToken] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (!turnstileToken) return;
+    if (!captchaToken) return;
     setStatus("sending");
 
     try {
@@ -23,8 +23,8 @@ export default function Contact() {
           from_name: form.name,
           // Honeypot — Web3Forms rejects if filled by a bot
           botcheck: "",
-          // Turnstile token — Cloudflare challenge proof
-          "cf-turnstile-response": turnstileToken,
+          // hCaptcha token — challenge proof
+          "h-captcha-response": captchaToken,
           ...form,
         }),
       });
@@ -32,7 +32,7 @@ export default function Contact() {
       if (data.success) {
         setStatus("sent");
         setForm({ name: "", email: "", message: "" });
-        setTurnstileToken(null);
+        setCaptchaToken(null);
       } else {
         setStatus("error");
       }
@@ -41,7 +41,7 @@ export default function Contact() {
     }
   };
 
-  const canSubmit = !!turnstileToken && status !== "sending" && status !== "sent";
+  const canSubmit = !!captchaToken && status !== "sending" && status !== "sent";
 
   return (
     <section id="contact" className="py-24 px-6 max-w-3xl mx-auto">
@@ -93,13 +93,13 @@ export default function Contact() {
             />
           </div>
 
-          {/* Cloudflare Turnstile */}
-          <Turnstile
-            siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY ?? ""}
-            onSuccess={(token) => setTurnstileToken(token)}
-            onExpire={() => setTurnstileToken(null)}
-            onError={() => setTurnstileToken(null)}
-            options={{ theme: "dark", size: "normal" }}
+          {/* hCaptcha */}
+          <HCaptcha
+            sitekey={process.env.NEXT_PUBLIC_HCAPTCHA_SITE_KEY ?? ""}
+            onVerify={(token) => setCaptchaToken(token)}
+            onExpire={() => setCaptchaToken(null)}
+            onError={() => setCaptchaToken(null)}
+            theme="dark"
           />
 
           <button
