@@ -1,7 +1,7 @@
 const skills = [
   "Angular", "React", "Next.js", "TypeScript", "Three.js",
   "Node.js", "AWS", "D3.js", "Electron", "React Native",
-  "GitLab CI", "Playwright", "Firebase", "Tailwind CSS",
+  "GitLab CI", "Playwright", "Firebase",
 ];
 
 export default function About() {
