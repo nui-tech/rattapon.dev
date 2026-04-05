@@ -7,11 +7,14 @@ const experiences = [
     location: "Christchurch, NZ",
     highlights: [
       "Architect and develop interactive 3D visualisation applications using Three.js and Angular, embedded in urban-planning and infrastructure products used by councils and government agencies.",
-      "Led architecture of a 360° panoramic view calibration system — an internal R&D project that became a core product feature, now used as the foundation for multiple client projects.",
-      "Appointed AI adoption pilot lead — evaluated tooling, defined usage guidelines, and drive ongoing AI productivity improvements across the engineering team.",
+      "Conceived and led a full architectural migration from Three.js to Unity on the BOEM (US federal agency) project — designed an Interface Control Document (ICD) abstraction layer to decouple the UI from the 3D engine, enabling parallel cross-team development and a seamless production engine swap with no UI disruption. Also architected the NgRx state management system including versioning strategy and graceful backward compatibility.",
+      "Led architecture and development of a 360° panoramic view calibration system — an internal research project that matured into a core product feature.",
+      "Designed a reusable 360° panoramic visualisation application template now used as the foundation for multiple client projects.",
+      "Led the company's AI adoption pilot — evaluated and recommended AI tooling for the engineering team, defined usage guidelines, and continue to drive ongoing AI integration and productivity improvements across the team.",
+      "Appointed to establish and lead the company's AI engineering community of practice — defining how teams adopt AI tooling, manage shared AI assets (instructions, rules, skills) within a monorepo, and share knowledge on AI usage across the organisation.",
       "Drove significant engineering process improvements: ESLint, GitLab CI PR checks, automated code-review assignment, git pre-commit hooks, and branch protection rules.",
     ],
-    stack: ["Angular", "Three.js", "TypeScript", "Node.js", "Marzipano", "Leaflet", "D3.js", "AWS", "GitLab CI", "GitHub Copilot"],
+    stack: ["Angular", "Three.js", "TypeScript", "Node.js", "NgRx", "Marzipano", "Leaflet", "D3.js", "AWS", "GitLab CI", "GitHub Copilot"],
   },
   {
     role: "Web Developer",

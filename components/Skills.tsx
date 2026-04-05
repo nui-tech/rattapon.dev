@@ -3,7 +3,7 @@ const skillGroups = [
     label: "Frontend",
     icon: "◈",
     color: "cyan",
-    skills: ["Angular", "React", "Next.js", "TypeScript", "JavaScript", "HTML5 / CSS3 / SCSS", "Tailwind CSS"],
+    skills: ["Angular", "React", "Next.js", "TypeScript", "JavaScript", "HTML5 / CSS3 / SCSS"],
   },
   {
     label: "3D & Visualisation",
