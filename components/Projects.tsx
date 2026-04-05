@@ -2,8 +2,8 @@ const projects = [
   {
     title: "360° Panoramic Calibration System",
     description:
-      "Architected and led development of an internal R&D tool for calibrating panoramic imagery used in urban-planning products. The project matured from a research prototype into a core product feature, now the foundation for multiple client deployments across New Zealand councils.",
-    outcome: "Core product feature · Used in multiple council/govt deployments",
+      "Architected and led development of an internal R&D tool for calibrating panoramic imagery used in energy and infrastructure visualisation products. The project matured from a research prototype into a core product feature, now the foundation for multiple client deployments globally.",
+    outcome: "Core product feature · Used across global client deployments",
     stack: ["Angular", "Three.js", "Marzipano", "TypeScript", "Node.js", "AWS"],
     category: "3D Visualisation",
   },
@@ -18,8 +18,8 @@ const projects = [
   {
     title: "Interactive 3D Urban Planning Visualiser",
     description:
-      "Designed and built client-facing 3D spatial applications that let councils and government agencies visualise infrastructure proposals in real-time. Embedded into decision-making workflows for urban development projects.",
-    outcome: "Adopted by NZ councils and government agencies",
+      "Designed and built client-facing 3D spatial applications for global energy companies, utilities, and mining firms to visualise infrastructure proposals in real-time. Embedded into stakeholder engagement and decision-making workflows.",
+    outcome: "Deployed for global energy, utility, and mining clients",
     stack: ["Three.js", "Angular", "TypeScript", "Leaflet", "D3.js", "AWS"],
     category: "3D Visualisation",
   },
