@@ -8,6 +8,14 @@ const projects = [
     category: "3D Visualisation",
   },
   {
+    title: "Three.js → Unity Engine Migration (BOEM)",
+    description:
+      "Conceived and designed an Interface Control Document (ICD) abstraction layer to decouple the Angular UI from the 3D engine on a US federal agency project. Enabled parallel cross-team development with the Unity team and a seamless production engine swap with no UI disruption. Also architected the NgRx state management system including versioning strategy and graceful backward compatibility.",
+    outcome: "Seamless engine migration · Zero UI disruption",
+    stack: ["Angular", "Three.js", "Unity", "NgRx", "TypeScript", "ICD Architecture"],
+    category: "Architecture",
+  },
+  {
     title: "Interactive 3D Urban Planning Visualiser",
     description:
       "Designed and built client-facing 3D spatial applications that let councils and government agencies visualise infrastructure proposals in real-time. Embedded into decision-making workflows for urban development projects.",
@@ -22,14 +30,6 @@ const projects = [
     outcome: "Company-wide adoption · Measurable productivity improvement",
     stack: ["GitHub Copilot", "MCP (Agentic AI)", "AI Spec-driven Dev"],
     category: "AI & Tooling",
-  },
-  {
-    title: "Internal Admin & Content Management Tooling",
-    description:
-      "Built and maintained internal admin systems that streamline content management and project delivery workflows, reducing manual operations and freeing up the team for higher-value work.",
-    outcome: "Reduced delivery cycle time across project teams",
-    stack: ["Angular", "TypeScript", "Node.js", "REST APIs", "AWS"],
-    category: "Tooling",
   },
   {
     title: "NZ Courier Group — Web Platform",
@@ -51,8 +51,8 @@ const projects = [
 
 const categoryColors: Record<string, string> = {
   "3D Visualisation": "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
+  "Architecture": "text-orange-400 bg-orange-500/10 border-orange-500/20",
   "AI & Tooling": "text-violet-400 bg-violet-500/10 border-violet-500/20",
-  "Tooling": "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
   "Full-Stack": "text-blue-400 bg-blue-500/10 border-blue-500/20",
   "DevX / Process": "text-amber-400 bg-amber-500/10 border-amber-500/20",
 };
