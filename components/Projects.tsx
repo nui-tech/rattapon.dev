@@ -1,4 +1,16 @@
-const projects = [
+import Link from "next/link";
+
+interface ProjectItem {
+  title: string;
+  description: string;
+  outcome: string;
+  stack: string[];
+  category: string;
+  showcaseHref?: string;
+  showcaseLabel?: string;
+}
+
+const projects: ProjectItem[] = [
   {
     title: "360° Panoramic Calibration System",
     description:
@@ -6,6 +18,8 @@ const projects = [
     outcome: "Core product feature · Used across global client deployments",
     stack: ["Angular", "Three.js", "Marzipano", "TypeScript", "Node.js", "AWS"],
     category: "3D Visualisation",
+    showcaseHref: "/showcase/panoramic-calibration",
+    showcaseLabel: "Open Interactive Showcase",
   },
   {
     title: "Three.js → Unity Engine Migration (BOEM)",
@@ -72,10 +86,16 @@ export default function Projects() {
             key={i}
             className="flex flex-col p-6 rounded-xl bg-gray-900 border border-gray-800 hover:border-gray-700 hover:bg-gray-900/80 transition-all duration-200 glow-box-cyan"
           >
-            <div className="flex items-start justify-between mb-4">
+            <div className="flex items-start justify-between gap-2 mb-4">
               <span className={`text-xs font-mono px-2 py-0.5 rounded-full border ${categoryColors[p.category] ?? "text-gray-400 bg-gray-800 border-gray-700"}`}>
                 {p.category}
               </span>
+              {p.showcaseHref && (
+                <span className="inline-flex items-center gap-1.5 text-[11px] font-mono text-emerald-400 bg-emerald-500/10 border border-emerald-500/25 px-2 py-0.5 rounded-full">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  Live Demo
+                </span>
+              )}
             </div>
 
             <h3 className="text-white font-semibold text-base mb-2 leading-snug">{p.title}</h3>
@@ -92,6 +112,15 @@ export default function Projects() {
                   </span>
                 ))}
               </div>
+              {p.showcaseHref && (
+                <Link
+                  href={p.showcaseHref}
+                  className="mt-4 w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border border-cyan-500/40 bg-cyan-500/10 hover:bg-cyan-500 hover:text-gray-950 text-cyan-300 text-xs font-mono font-semibold transition-all duration-200"
+                >
+                  <span>{p.showcaseLabel ?? "Open Showcase"}</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           </div>
         ))}
